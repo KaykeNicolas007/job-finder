@@ -10,7 +10,7 @@ router.get("/view/:id", function (req, res) {
   Job.findOne({
     where: { id: req.params.id },
   })
-    .then(function (Job) {
+    .then(function (job) {
       res.render("view", {
         job,
       });
