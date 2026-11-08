@@ -6,6 +6,20 @@ router.get("/add", function (req, res) {
   res.render("add");
 });
 
+router.get("/view/:id", function (req, res) {
+  Job.findOne({
+    where: { id: req.params.id },
+  })
+    .then(function (Job) {
+      res.render("view", {
+        job,
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+});
+
 router.post("/add", function (req, res) {
   let { title, salary, company, description, email, new_job } = req.body;
 
