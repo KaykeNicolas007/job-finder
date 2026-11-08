@@ -20,7 +20,7 @@ db.authenticate()
   });
 
 app.get("/", function (req, res) {
-  res.send("Hello, world!");
+  res.send("Working well!");
 });
 
 app.use("/jobs", require("./routes/jobs"));
