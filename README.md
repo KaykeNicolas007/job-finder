@@ -13,6 +13,7 @@ O foco principal é aprender como as partes de uma aplicação web se conectam:
 - mapeamento de modelos e consultas com Sequelize;
 - formulários HTML e rotas `GET` e `POST`;
 - organização básica entre rotas, modelos, banco de dados e arquivos públicos.
+  ![Um exemplo de print da aplicação.](print.png)
 
 ## Como funciona
 
