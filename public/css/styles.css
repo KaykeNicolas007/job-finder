@@ -29,7 +29,8 @@
 }
 
 .nav-link.btn.btn-primary:hover,
-#search-form button:hover {
+#search-form button:hover,
+.list-group-item a:hover {
   background-color: #fff;
   color: #f03e3e;
   border-color: #f03e3e;
@@ -113,4 +114,32 @@
   position: absolute;
   left: -40px;
   top: calc(50% - 40px);
+}
+
+.list-group-item a {
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  height: 50px;
+  line-height: 35px;
+  background-color: #f03e3e;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: #fff;
+}
+
+.new-job-label {
+  background-color: #ffd500;
+  color: #4d5154;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: absolute;
+  right: 250px;
+  top: 40px;
+  display: none;
+}
+
+.new-job .new-job-label {
+  display: block;
 }
