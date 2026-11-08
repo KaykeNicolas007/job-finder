@@ -6,6 +6,8 @@ const db = require("./db/connection");
 const bodyParser = require("body-parser");
 const { engine } = require("express-handlebars");
 const Job = require("./models/Job");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const PORT = 3000;
 
@@ -38,11 +40,30 @@ db.authenticate()
   });
 
 app.get("/", function (req, res) {
-  Job.findAll({ order: [["createdAt", "DESC"]] }).then(function (jobs) {
-    res.render("index", {
-      jobs,
-    });
-  });
+  let search = req.query.job;
+  let query = "%" + search + "%";
+
+  if (!search) {
+    Job.findAll({ order: [["createdAt", "DESC"]] })
+      .then(function (jobs) {
+        res.render("index", {
+          jobs,
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    Job.findAll({
+      where: { title: { [Op.like]: query } },
+      order: [["createdAt", "DESC"]],
+    })
+      .then(function (jobs) {
+        res.render("index", {
+          jobs,
+          search,
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 });
 
 app.use("/jobs", require("./routes/jobs"));

@@ -4,7 +4,7 @@
     Somos um site iniciante de vagas de tecnologia no mercado, direcionadas a
     emprego remoto.
   </p>
-  <form id="search-form" class="form-inline" action="">
+  <form id="search-form" class="form-inline" action="/" method="get">
     <div class="form-group col-md-10">
       <input
         type="text"
@@ -24,7 +24,11 @@
   <div id="jobs-container" class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
+        {{#if search}}
+          <h2 id="job-list-title">Buscando vagas que contém: {{search}}</h2>
+        {{else}}
+          <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
+        {{/if}}
         <ul id="job-list" class="list-group">
           {{#each jobs}}
             <li class="list-group-item {{#if dataValues.new_job}}new-job{{/if}}">
