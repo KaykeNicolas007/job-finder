@@ -1,0 +1,36 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "description": "Este sistema é um portal para programadores encontrarem vagas de trabalho.",
+  "keywords": [
+    "dev",
+    "jobs",
+    "dev",
+    "oportunity"
+  ],
+  "homepage": "https://github.com/KaykeNicolas007/job-finder#readme",
+  "bugs": {
+    "url": "https://github.com/KaykeNicolas007/job-finder/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaykeNicolas007/job-finder.git"
+  },
+  "license": "MIT",
+  "author": "Kayke Nícolas",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.4.0",
+    "express": "^5.3.0",
+    "express-handlebars": "^9.0.4",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
